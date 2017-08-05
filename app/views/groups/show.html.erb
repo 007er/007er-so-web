@@ -1,18 +1,16 @@
+<h3>驴妹提示：此页为小组组长编辑页面，可点击“创建007er”进行编辑；班级学员可在此点击“加入小组”或“退出小组”，左侧回显示你的你是否在小组的状体。</h3>
 <div class="col-md-12">
   <div class="group">
     <span class="pull-right">
       <% if current_user && current_user.is_member_of?(@group) %>
-        <label class="label label-success"> 群组成员 </label>
-        <%= link_to("Quit Group", quit_group_path(@group), method: :post, class: "btn btn-default") %>
+        <label class="label label-success"> 小组成员 </label>
+        <%= link_to("退出小组", quit_group_path(@group), method: :post, class: "btn btn-default") %>
       <% else %>
-        <label class="label label-warning"> 不是群组成员 </label>
-        <%= link_to("Join Group", join_group_path(@group), method: :post, class: "btn btn-default") %>
+        <label class="label label-warning"> 不是小组成员 </label>
+        <%= link_to("加入小组", join_group_path(@group), method: :post, class: "btn btn-default") %>
       <% end %>
     </span>
-    <%= link_to("Write a Post", new_group_post_path(@group), class: "btn btn-default pull-right")%>
-    <% if current_user && current_user == @group.user %>
-      <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary pull-right")%>
-    <% end %>
+    <%= link_to("创建007er", new_group_post_path(@group), class: "btn btn-default pull-right")%>
   </div>
   <h2><%= @group.title %></h2>
   <p><%= @group.description %></p>
