@@ -26,7 +26,9 @@
     <tbody>
       <% @posts.each do |post| %>
         <tr>
-          <td><%= post.content %></td>
+          <td class="markdown">
+            <%= markdown(post.content) %>
+          </td>
           <td><%= post.user.email %></td>
           <td><%= post.created_at %></td>
         </tr>
