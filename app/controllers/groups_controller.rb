@@ -93,7 +93,6 @@ class GroupsController < ApplicationController
     { :title_cont => query_string }
   end
 
-
   private
 
   def find_group_and_check_permission
