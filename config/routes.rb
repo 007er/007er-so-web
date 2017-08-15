@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :groups
   end
 
-  resources :groups, only: [:index]
+  resources :groups
 end
