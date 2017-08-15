@@ -13,6 +13,8 @@ module Web007erSo
 
     config.generators do |generator|
       generator.test_framework :rspec
+      generator.helper = false
+      generator.assets false
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
