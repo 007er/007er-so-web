@@ -1,6 +1,8 @@
 <%= simple_form_for [:admin, @group] do |f| %>
     <div class="form-inputs">
       <%= f.input :name %>
+      <%= f.input :title %>
+      <%= f.input :description %>
     </div>
     <div class="form-actions">
       <%= f.button :submit %>
