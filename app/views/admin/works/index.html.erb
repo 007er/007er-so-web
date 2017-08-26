@@ -1,0 +1,5 @@
+<ul>
+  <% @works.each do |work| %>
+    <li><%= link_to(work.name, admin_work_path(work)) %></li>
+  <% end %>
+</ul>
