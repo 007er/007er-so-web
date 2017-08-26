@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root "groups#index"
   devise_for :admins
 
-  get 'admin', to: 'admin/admins#index'
+  get 'admin', to: 'admins#index'
   namespace :admin do
     resources :works
+    resources :users
     resources :groups
   end
 
