@@ -1,0 +1,20 @@
+<%= simple_form_for [:admin, @work] do |f| %>
+  <div class="group">
+    <%= f.input :name %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category_id %>
+    <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] }, {}, :class => "form-control" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+<% end %>
+
+<script>
+  $("#work_category_id").select2( { theme: "bootstrap"} );
+</script>

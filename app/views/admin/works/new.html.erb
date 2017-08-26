@@ -1,14 +1,5 @@
 <h2>New work</h2>
 
-<%= simple_form_for [:admin, @work] do |f| %>
-  <div class="group">
-    <%= f.input :name %>
-  </div>
+<hr>
 
-  <div class="group">
-    <%= f.input :description %>
-  </div>
-
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
-
-<% end %>
+<%= render "form" %>

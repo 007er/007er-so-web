@@ -9,16 +9,14 @@
 <body>
   <div class="container">
     <%= render "common/admin.navbar" %>
-    <div class="row">
-      <div class="col-md-2">
-        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-          <li> <%= link_to("Works", admin_works_path) %> </li>
-        </ul>
-      </div>
-      <div class="col-md-10">
-        <%= yield %>
-      </div>
+    <%= render "common/flashes" %>
+    <div class="btn-group btn-group-justified">
+      <a href="/admin/works" class="btn btn-primary">Works</a>
+      <a href="/admin/users" class="btn btn-primary">Users</a>
+      <a href="/admin/groups" class="btn btn-primary">Groups</a>
+      <a href="/admin/categories" class="btn btn-primary">Categories</a>
     </div>
+    <%= yield %>
   </div>
 </body>
 </html>

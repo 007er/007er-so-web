@@ -34,7 +34,7 @@ class Admin::WorksController < ApplicationController
     @work = Work.find(params[:id])
 
     if @work.update(work_params)
-      redirect_to admin_work_path
+      redirect_to admin_works_path
     else
       render :edit
     end
@@ -49,6 +49,6 @@ class Admin::WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:name, :description)
+    params.require(:work).permit(:name, :description, :category_id)
   end
 end
