@@ -1,11 +1,15 @@
 class Admin::WorksController < ApplicationController
   layout "admin"
-  
+
   before_action :authenticate_user!
   before_action :admin_required
 
   def index
     @works = Work.all
+  end
+
+  def show
+    @work = Work.find(params[:id])
   end
 
   def new
@@ -30,10 +34,16 @@ class Admin::WorksController < ApplicationController
     @work = Work.find(params[:id])
 
     if @work.update(work_params)
-      redirect_to admin_works_path
+      redirect_to admin_work_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @work = Work.find(params[:id])
+    @work.destroy
+    redirect_to admin_works_path, alert: "Work delete"
   end
 
   private
