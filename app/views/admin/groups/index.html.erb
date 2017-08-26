@@ -1,30 +1,22 @@
-<h2>小组</h2>
+<h1>Admin Groups</h1>
 
-<div class="col-md-12">
-  <div class="group">
-    <%= link_to("New group", new_admin_group_path, class: "btn btn-primary pull-right") %>
-  </div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>Name</td>
-        <td>Title</td>
-        <td>Description</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @groups.each do |group| %>
-        <tr>
-          <td><%= group.name %></td>
-          <td><%= link_to(group.title, admin_group_path(group)) %></td>
-          <td><%= group.description %></td>
-          <td>
-              <%= link_to("Edit", edit_admin_group_path(group), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", admin_group_path(group),    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "Are you sure?" } )%>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="group">
+  <%= link_to("New group", new_admin_group_path, class: "btn btn-primary pull-right") %>
 </div>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.name %></td>
+      <td>
+          <%= link_to("Edit", edit_admin_group_path(group), class: "btn btn-sm btn-default")%>
+          <%= link_to("Delete", admin_group_path(group),    class: "btn btn-sm btn-default",
+                      method: :delete, data: { confirm: "Are you sure?" } )%>
+      </td>
+    </tr>
+  <% end %>
+</table>

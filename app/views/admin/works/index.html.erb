@@ -1,28 +1,23 @@
-<div class="col-md-12">
-  <div class="group">
-    <%= link_to("New work", new_admin_work_path, class: "btn btn-primary pull-right") %>
-  </div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>Name</td>
-
-        <td>Description</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @works.each do |work| %>
-        <tr>
-          <td><%= link_to(work.name, admin_work_path(work)) %></td>
-
-          <td><%= work.description %></td>
-          <td>
-              <%= link_to("Edit", edit_admin_work_path(work), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", admin_work_path(work),    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "Are you sure?" } )%>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="group">
+  <%= link_to("New work", new_admin_work_path, class: "btn btn-primary pull-right") %>
 </div>
+<h1>Admin Works</h1>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @works.each do |work| %>
+    <tr>
+      <td><%= link_to(work.name, admin_work_path(work)) %></td>
+      <td><%= work.description %></td>
+      <td>
+          <%= link_to("Edit", edit_admin_work_path(work), class: "btn btn-sm btn-default")%>
+          <%= link_to("Delete", admin_work_path(work),    class: "btn btn-sm btn-default",
+                      method: :delete, data: { confirm: "Are you sure?" } )%>
+      </td>
+    </tr>
+  <% end %>
+</table>
