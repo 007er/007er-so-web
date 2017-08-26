@@ -1,4 +1,9 @@
 class Admin::WorksController < ApplicationController
+  layout "admin"
+  
+  before_action :authenticate_user!
+  before_action :admin_required
+
   def index
     @works = Work.all
   end
