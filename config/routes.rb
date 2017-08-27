@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "groups#index"
+  root "works#index"
   devise_for :admins
 
   get 'admin', to: 'admins#index'
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :groups
   end
 
-  resources :groups
+  resources :works
 end
