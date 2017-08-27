@@ -11,7 +11,7 @@
       <td><%= link_to(work.category.try(:name), work_path(work)) %></td>
       <td><%= work.name %></td>
       <td><%= work.description %></td>
-      <td><%= work.created_at %></td>
+      <td><%= work.created_at.to_s %></td>
     </tr>
   <% end %>
 </table>

@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resources :users
     resources :groups
   end
-
+  resource :user
   resources :works
 end

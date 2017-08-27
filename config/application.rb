@@ -10,6 +10,7 @@ module Web007erSo
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
+    config.time_zone = "Beijing"
 
     config.generators do |generator|
       generator.test_framework :rspec
@@ -21,3 +22,5 @@ module Web007erSo
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+Time::DATE_FORMATS.merge!(:default => '%m/%d %I:%M %p', :ymd => '%Y/%m/%d')
