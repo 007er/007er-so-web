@@ -1,5 +1,6 @@
-class Admin::UsersController < AdminController
-
+class Admin::UsersController < ApplicationController
+  layout "admin"
+  
    def index
      @users = User.includes(:groups).all
    end
