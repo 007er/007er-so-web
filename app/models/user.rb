@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :memberships
+  
+  belongs_to :category
+
   has_many :groups, :through => :memberships
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

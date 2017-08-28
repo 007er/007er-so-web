@@ -7,6 +7,10 @@ class Admin < ApplicationRecord
 
   validate :should_be_known_admin
 
+  
+  belongs_to :user
+  belongs_to :category
+
   private
 
   def should_be_known_admin
