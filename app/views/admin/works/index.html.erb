@@ -1,8 +1,6 @@
 <h1>Admin Works</h1>
 
-<div class="group">
-  <%= link_to("New work", new_admin_work_path, class: "btn btn-primary pull-right") %>
-</div>
+
 
 <table class="table">
   <tr>
@@ -16,17 +14,13 @@
   <% @works.each do |work| %>
     <tr>
       <td><%= work.category.try(:name) %></td>
-      <td><%= link_to(work.name, admin_work_path(work)) %></td>
+      <td><%= link_to(work.name) %></td>
 
       <td><%= work.description %></td>
       <td class="markdown">
         <%= markdown(work.description) %>
       </td>
-      <td>
-          <%= link_to("Edit", edit_admin_work_path(work), class: "btn btn-sm btn-default")%>
-          <%= link_to("Delete", admin_work_path(work),    class: "btn btn-sm btn-default",
-                      method: :delete, data: { confirm: "Are you sure?" } )%>
-      </td>
+      
     </tr>
   <% end %>
 </table>

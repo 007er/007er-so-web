@@ -12,6 +12,6 @@ u.password_confirmation = "123456"
 u.is_admin = true
 u.save
 
-10.times{ |i| Work.create!( :name => "#{i} 作业", :description => "#{i} 评论" ) }
+
 10.times{ |i| Group.create!( :name => "#{i} Group" ) }
 10.times{ |i| Category.create!( :name => "#{i} Category" ) }

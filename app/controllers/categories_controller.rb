@@ -5,6 +5,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @works = @category.works.recent.paginate(:page => params[:page], :per_page => 5)
+    @works = @category.works.recent.paginate(:page => params[:page], :per_page => 3)
   end
 end

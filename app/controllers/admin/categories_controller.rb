@@ -2,7 +2,7 @@ class Admin::CategoriesController < ApplicationController
   layout "admin"
 
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
-  before_action :admin_required
+  before_action :require_is_admin
 
   def index
     @categories = Category.all
@@ -33,6 +33,7 @@ class Admin::CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
+
     if @category.update(category_params)
       redirect_to admin_categories_path
     else
@@ -44,7 +45,6 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     redirect_to admin_categories_path, alert: "Category delete"
-
   end
 
   private

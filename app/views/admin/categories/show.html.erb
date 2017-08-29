@@ -8,7 +8,7 @@
 
   <table class="table">
     <tr>
-      <th>Category</th>
+
       <th>Name</th>
       <th>Description</th>
       <th>Action</th>
@@ -16,7 +16,7 @@
     </tr>
     <% @works.each do |work| %>
       <tr>
-        <td><%= work.category.try(:name) %></td>
+        
         <td><%= link_to(work.name, admin_category_work_path(@category)) %></td>
         <td class="markdown">
           <%= markdown(work.description) %>

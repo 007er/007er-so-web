@@ -4,6 +4,7 @@ class Admin::WorksController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create]
 
   def index
+    @category = Category.find(params[:category_id])
     @works = Work.all
   end
 
@@ -24,7 +25,7 @@ class Admin::WorksController < ApplicationController
 
 
     if @work.save
-      redirect_to admin_categories_path(@category)
+      redirect_to admin_category_path(@category)
     else
       render :new
     end
@@ -40,7 +41,7 @@ class Admin::WorksController < ApplicationController
     @work = Work.find(params[:id])
 
     if @work.update(work_params)
-      redirect_to admin_category_work_path
+      redirect_to admin_category_path
     else
       render :edit
     end

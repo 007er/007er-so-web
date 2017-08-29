@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829002236) do
+ActiveRecord::Schema.define(version: 20170828025454) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "email", default: "", null: false
@@ -106,9 +106,6 @@ ActiveRecord::Schema.define(version: 20170829002236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
-    t.integer "admin_email_id"
-    t.integer "admin_id"
-    t.index ["admin_id"], name: "index_works_on_admin_id"
     t.index ["category_id"], name: "index_works_on_category_id"
   end
 

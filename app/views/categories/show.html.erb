@@ -13,8 +13,8 @@
     <tbody>
        <% @works.each do |work| %>
         <tr>
-          <td><%= work.name %></td>
-          <td><%= work.description %></td>
+          <td><%= link_to(work.name, category_work_path(@category)) %></td>
+
           <td class="markdown">
             <%= markdown(work.description) %>
           </td>
@@ -23,6 +23,7 @@
        <% end %>
     </tbody>
   </table>
+  
 </div>
 
 <div class="text-center">
