@@ -19,6 +19,9 @@
       <td><%= link_to(work.name, admin_work_path(work)) %></td>
 
       <td><%= work.description %></td>
+      <td class="markdown">
+        <%= markdown(work.description) %>
+      </td>
       <td>
           <%= link_to("Edit", edit_admin_work_path(work), class: "btn btn-sm btn-default")%>
           <%= link_to("Delete", admin_work_path(work),    class: "btn btn-sm btn-default",

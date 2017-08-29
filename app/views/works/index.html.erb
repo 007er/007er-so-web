@@ -10,8 +10,13 @@
     <tr>
       <td><%= link_to(work.category.try(:name), work_path(work)) %></td>
       <td><%= work.name %></td>
-      <td><%= work.description %></td>
+      <td class="markdown">
+        <%= markdown(work.description) %>
+      </td>
       <td><%= work.created_at.to_s %></td>
     </tr>
   <% end %>
 </table>
+<div class="text-center">
+  <%= will_paginate @works %>
+</div>

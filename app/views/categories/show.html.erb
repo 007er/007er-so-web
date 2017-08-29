@@ -15,6 +15,9 @@
         <tr>
           <td><%= work.name %></td>
           <td><%= work.description %></td>
+          <td class="markdown">
+            <%= markdown(work.description) %>
+          </td>
           <td><%= work.created_at %></td>
         </tr>
        <% end %>

@@ -1,5 +1,7 @@
 <div class="group">
   <h2><%= @work.category.try(:name) %></h2>
   <h2><%= @work.name %></h2>
-  <p><%= @work.description %></p>
+  <p class="markdown">
+    <%= markdown(@work.description) %>
+  </p>
 </div>

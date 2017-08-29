@@ -39,8 +39,11 @@ gem 'bootstrap-sass'
 
 gem 'simple_form'
 gem "select2-rails"
-gem "rails-erd"
-gem 'will_paginate'
+gem "rails-erd" #model可视图
+gem 'will_paginate' #分页分页功能
+
+gem 'redcarpet'
+gem 'rouge'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
