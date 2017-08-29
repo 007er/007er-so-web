@@ -1,6 +1,10 @@
 class User < ApplicationRecord
-  
-  belongs_to :category
+
+  belongs_to :user, required: false
+  has_many :admins
+  has_many :works
+  has_many :coregories
+
 
   has_many :groups, :through => :memberships
   # Include default devise modules. Others available are:

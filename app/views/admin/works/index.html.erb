@@ -6,16 +6,18 @@
 
 <table class="table">
   <tr>
-    <th>Name</th>
     <th>Category</th>
+    <th>Name</th>
+
     <th>Description</th>
     <th>Action</th>
     <th></th>
   </tr>
   <% @works.each do |work| %>
     <tr>
-      <td><%= link_to(work.name, admin_work_path(work)) %></td>
       <td><%= work.category.try(:name) %></td>
+      <td><%= link_to(work.name, admin_work_path(work)) %></td>
+
       <td><%= work.description %></td>
       <td>
           <%= link_to("Edit", edit_admin_work_path(work), class: "btn btn-sm btn-default")%>

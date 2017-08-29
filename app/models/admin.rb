@@ -7,9 +7,11 @@ class Admin < ApplicationRecord
 
   validate :should_be_known_admin
 
-  
-  belongs_to :user
-  belongs_to :category
+
+  has_many :users
+  belongs_to :category, required: false
+
+  has_many :works
 
   private
 

@@ -6,12 +6,12 @@
 <table class="table">
   <tr>
     <th>Name</th>
-    <th></th>
+    <th>Action</th>
     <th></th>
   </tr>
   <% @categories.each do |category| %>
     <tr>
-      <td><%= category.name %></td>
+      <td><%= link_to(category.name, admin_category_path(category)) %></td>
       <td>
           <%= link_to("Edit", edit_admin_category_path(category), class: "btn btn-sm btn-default")%>
           <%= link_to("Delete", admin_category_path(category),    class: "btn btn-sm btn-default",

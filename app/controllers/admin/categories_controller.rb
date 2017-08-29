@@ -1,8 +1,13 @@
 class Admin::CategoriesController < ApplicationController
   layout "admin"
-  
+
   def index
     @categories = Category.all
+  end
+
+  def show
+    @category = Category.find(params[:id])
+    @works = @category.works.recent.paginate(:page => params[:page], :per_page => 5)  #paginate(:page => params[:page], :per_page => 5) 指的是分页
   end
 
   def new
@@ -11,7 +16,8 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-    if @category.save
+
+    if @category.save!
       redirect_to admin_categories_path
     else
       render :new

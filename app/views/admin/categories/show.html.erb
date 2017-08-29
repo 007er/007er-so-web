@@ -1,0 +1,33 @@
+<div class="col-md-12">
+<%= link_to("Write a Work", new_admin_category_work_path(@category), class: "btn btn-default pull-right")%>
+  <h2><%= @category.name %></h2>
+
+</div>
+
+<table class="table">
+<thead>
+  <tr>
+
+     <th>文章</th>
+     <th>评论</th>
+     <th>发表时间</th>
+
+   </tr>
+</thead>
+<tbody>
+   <% @works.each do |work| %>
+    <tr>
+
+      <td><%= work.name %></td>
+      <td><%= work.description %></td>
+      <td><%= work.created_at %></td>
+
+
+    </tr>
+   <% end %>
+</tbody>
+</table>
+
+<div class="text-center">
+  <%= will_paginate @works %>
+</div>

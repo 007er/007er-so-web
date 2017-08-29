@@ -5,12 +5,16 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admins#index'
   namespace :admin do
-    resources :works
-    resources :categories
+
+    resources :categories do
+      resources :works
+    end
     resources :users
     resources :groups
   end
-  resources :categories
+  resources :categories do
+    resources :works
+  end
   resource :user
-  resources :works
+
 end

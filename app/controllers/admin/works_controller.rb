@@ -1,8 +1,7 @@
 class Admin::WorksController < ApplicationController
   layout "admin"
-
-  before_action :authenticate_user!
   before_action :admin_required
+  before_action :authenticate_user!, :only => [:new, :create]
 
   def index
     @works = Work.all
@@ -13,14 +12,18 @@ class Admin::WorksController < ApplicationController
   end
 
   def new
+    @category = Category.find(params[:category_id])
     @work = Work.new
   end
 
   def create
+    @category = Category.find(params[:category_id])
     @work = Work.new(work_params)
+    @work.category = @category
+    
 
     if @work.save
-      redirect_to admin_works_path
+      redirect_to admin_categories_path(@category)
     else
       render :new
     end
