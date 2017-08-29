@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "categories#index"
   devise_for :admins
 
   get 'admin', to: 'admins#index'
-  
+
   namespace :admin do
     resources :categories do
       resources :works
@@ -17,6 +16,6 @@ Rails.application.routes.draw do
     resources :works
   end
   resource :user
-  resources :works
 
+  root "categories#index"
 end

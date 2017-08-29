@@ -1,7 +1,4 @@
 <div class="group">
-  <div class="group">
-    <%= link_to("Edit", edit_admin_category_work_path(@work), class: "btn btn-primary pull-right")%>
-  </div>
   <h2><%= @work.category.try(:name) %></h2>
   <h2><%= @work.name %></h2>
 

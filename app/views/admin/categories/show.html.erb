@@ -16,14 +16,14 @@
     </tr>
     <% @works.each do |work| %>
       <tr>
-        
+
         <td><%= link_to(work.name, admin_category_work_path(@category)) %></td>
         <td class="markdown">
           <%= markdown(work.description) %>
         </td>
         <td>
-            <%= link_to("Edit", edit_admin_category_work_path(@category), class: "btn btn-sm btn-default")%>
-            <%= link_to("Delete", admin_category_work_path(@category),    class: "btn btn-sm btn-default",
+            <%= link_to("Edit", edit_admin_category_work_path(@category, work), class: "btn btn-sm btn-default")%>
+            <%= link_to("Delete", admin_category_work_path(@category, work),    class: "btn btn-sm btn-default",
                         method: :delete, data: { confirm: "Are you sure?" } )%>
         </td>
       </tr>

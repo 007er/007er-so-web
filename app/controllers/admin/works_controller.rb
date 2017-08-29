@@ -1,7 +1,8 @@
 class Admin::WorksController < ApplicationController
   layout "admin"
-  before_action :admin_required
-  before_action :authenticate_user!, :only => [:new, :create]
+
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+  before_action :require_is_admin
 
   def index
     @category = Category.find(params[:category_id])
@@ -41,7 +42,7 @@ class Admin::WorksController < ApplicationController
     @work = Work.find(params[:id])
 
     if @work.update(work_params)
-      redirect_to admin_category_path
+      redirect_to admin_category_path(@category)
     else
       render :edit
     end
