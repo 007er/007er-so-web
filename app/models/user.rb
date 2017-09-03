@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_one :profile
+  accepts_nested_attributes_for :profile #接受嵌套属性 profile
 
   belongs_to :user, required: false
   has_many :admins

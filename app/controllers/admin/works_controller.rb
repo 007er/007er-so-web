@@ -1,8 +1,4 @@
-class Admin::WorksController < ApplicationController
-  layout "admin"
-
-  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
-  before_action :require_is_admin
+class Admin::WorksController < AdminController
 
   def index
     @category = Category.find(params[:category_id])

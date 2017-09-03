@@ -1,5 +1,4 @@
-class Admin::GroupsController < ApplicationController
-  layout "admin"
+class Admin::GroupsController < AdminController
   
   def index
     @groups = Group.all

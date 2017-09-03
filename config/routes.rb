@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   devise_for :admins
 
-  get 'admin', to: 'admins#index'
+
 
   namespace :admin do
     resources :categories do
       resources :works
     end
-    resources :users
+    resources :users do
+      resource :profile, :controller => "user_profiles"
+    end
     resources :groups
   end
 
@@ -17,5 +19,5 @@ Rails.application.routes.draw do
   end
   resource :user
 
-  root "categories#index"
+  root "welcome#index"
 end
