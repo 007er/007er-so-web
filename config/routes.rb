@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   devise_for :admins
 
-
-
   namespace :admin do
     resources :categories do
       resources :works
@@ -19,5 +17,7 @@ Rails.application.routes.draw do
   end
   resource :user
 
-  root "welcome#index"
+  resources :posts
+
+  root "posts#index"
 end
