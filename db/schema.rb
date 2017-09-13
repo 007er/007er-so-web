@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913073408) do
+ActiveRecord::Schema.define(version: 20170913125256) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "email", default: "", null: false
@@ -50,8 +50,12 @@ ActiveRecord::Schema.define(version: 20170913073408) do
     t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "body"
+    t.integer "post_id"
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["oo7er_id"], name: "index_comments_on_oo7er_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
