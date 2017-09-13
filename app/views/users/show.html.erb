@@ -1,6 +1,19 @@
-<h1>我的个人资料</h1>
+<div id="page_wrapper">
+    <div id="profile_image">
+        <%= image_tag "profile.jpeg" %>
+    </div>
 
-<p>Email: <%= @user.email %></p>
-<p>Timezone: <%= @user.time_zone %></p>
-<p>Birthday: <%= @user.profile.birthday %></p>
-<p>Bio: <%= simple_format @user.profile.bio %></p>
+    <div id="content">
+      <h1>我的个人资料</h1>
+
+      <p>Email: <%= @user.email %></p>
+      <p>Timezone: <%= @user.time_zone %></p>
+      <p>Birthday: <%= @user.profile.birthday %></p>
+      <p>Bio: <%= simple_format @user.profile.bio %></p>
+
+      <h1>Hey, I'm Mackenzie Child</h1>
+      <p>Welcome to week 2 of my 12 Web Apps in 12 Weeks Challenge.</p>
+      <p>This week I built a blog in Rails 4. You're actually on the demo application right now. Cool stuff, right!.</p>
+      <p>If you'd like to follow along as I learn more Ruby on Rails, find me on Twitter <a href="http://twitter.com/mackenziechild">@MackenzieChild</a> or on the web at <a href="http://mackenziechild.me">mackenziechild.me</a>, and get my posts and exclusive content in your inbox by signing up for my newsletter <a href="http://eepurl.com/02olT">here</a>.</p>
+    </div>
+</div>
