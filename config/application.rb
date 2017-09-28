@@ -19,3 +19,5 @@ module Web007erSo
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+JUHE_CONFIG = Rails.application.config_for(:juhe)
