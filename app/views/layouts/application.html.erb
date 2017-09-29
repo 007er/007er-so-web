@@ -19,7 +19,7 @@
       
       <ul>
         <li class="category">Website</li>
-        <li><%= link_to "Blog", root_path %></li>
+        <li><%= link_to "Blog", posts_path %></li>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "City", cities_path %></li>
         <li><%= link_to "Trains", api_v1_trais_path %></li>
@@ -41,8 +41,16 @@
       <div id="header">
         <p>All Posts</p>
         <div class="buttons">
-          <button class="button"><%= link_to "New Post", new_post_path %></button>
-          <button class="button">Log Out</button>
+          
+          <a class="button" href="/posts/new">New Post</a>
+          
+          <% if current_user %>
+            <a class="button" href="/users/sign_out" data-method="delete">Sign Up</a>
+            <a class="button" href="/users/edit">Edit Password</a>
+          <% else %>
+            <a class="button" href="/users/sign_up">Sign Up</a>
+            <a class="button" href="/users/sign_in">Sign In</a>
+          <% end %>
         </div>
       </div>
 

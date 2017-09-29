@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 	namespace :api, :defaults => { :format => :json } do
 		namespace :v1 do
+			
+			get "/reservations" => "reservations#index", :as => :reservations
+
 			get "/trains" => "trains#index", :as => :trais #查询火车
 			get "/trains/:train_number" => "trains#show", :as => :train #查询车次
 
@@ -12,16 +15,19 @@ Rails.application.routes.draw do
 	end
 
   	devise_for :users
+
 	resources :posts do
 		resources :comments
 	end
-	root "posts#index"
+	
 
 	resources :cities do
 		member do
 			post :update_temp
 		end
 	end
+
+	root "welcome#index"
 
 	get '/about', to: 'pages#about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
