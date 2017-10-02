@@ -10,10 +10,15 @@
 
   <body>
 
-  	<div>
-     <%= render "common/navbar" %>
-     <%= render "common/flashes" %>
-     <%= yield %>
+    <header class="navbar navbar-default" role="navigation" >
+      <%= render "common/navbar" %>
+    </header>
+
+    <div id="main_content" class="container">
+      <%= render "common/flashes" %>
+      <div id="content" class="col-md-9 center-black">
+      <%= yield %>
+      </div>
     </div>
 
     <%= render "common/footer" %>

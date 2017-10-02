@@ -15,4 +15,37 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
- 
+
+ #main_content {
+ 	#content {
+ 		float: none; /*float:使悬浮*/
+ 	}
+ 	padding-bottom: 100px; /*底部填充*/
+ 	.link {
+ 		padding: 2em 1em;
+ 		border-bottom: 1px solid #e9e9e9;
+ 		.title {
+ 			a {
+ 				color: #FF4500;
+ 			}
+ 		}
+ 	}
+ 	.comments_title {
+ 		margin: 2em;
+ 	}
+ 	#comments {
+ 		.comment {
+ 			padding: 1em 0;
+ 			border-top: 1px solid #E9E9E9;
+ 			.lead {
+ 				margin-bottom: 0;
+ 			}
+ 		}
+
+ 	}
+
+ }
+element.style {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
