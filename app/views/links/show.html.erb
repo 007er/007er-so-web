@@ -26,3 +26,14 @@
 		<%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 	</div>
 <% end %>
+
+
+<h3 class="comments_title">
+	<%= @link.comments.count %> Comments
+</h3>
+
+<div id="comments">
+	<%= render @link.comments %>
+</div>
+
+<%= render "comments/form" %>
